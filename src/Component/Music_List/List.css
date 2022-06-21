@@ -1,0 +1,53 @@
+/* The sidepanel menu */
+.sidepanel {
+    height: 100vh; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.48);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(255, 255, 255, 0.43);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+  
+  /* The sidepanel links */
+
+  
+  /* Position and style the close button (top right corner) */
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style the button that is used to open the sidepanel */
+  .openbtn {
+    position: fixed;
+    z-index: 100;
+    right: 1rem;
+    margin: .7rem;
+    border-radius: 10px;
+    width: 3.5rem;
+    height: 3rem;
+    border-color: coral;
+    color: rgb(223, 122, 0);
+    box-shadow: -8px 8px 11px 3px #000000;
+    font-size: 16px;
+    cursor: pointer;
+    
+  }
+  
+  .openbtn:hover {
+    background-color: rgb(218, 141, 0);
+      transition: .5s;
+    
+  }

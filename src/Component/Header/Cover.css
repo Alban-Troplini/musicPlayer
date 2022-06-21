@@ -1,0 +1,35 @@
+.coverSection {
+    flex: 2;
+}
+
+.cover {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    flex: 1;
+    
+}
+
+.cover-image {
+    width: 10rem;
+    height: 10rem;
+    background: linear-gradient(200deg, hsla(355, 74%, 62%, 1) 0%, hsla(0, 0%, 3%, 1) 100%);
+    margin-top: 1.3rem;
+    margin-right: -5rem;
+    border-radius: 5    px;
+    z-index: 10;
+    box-shadow: -8px 8px 11px 3px #252525;
+}
+
+.vinyl {
+    animation: spin 10s linear infinite ;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
