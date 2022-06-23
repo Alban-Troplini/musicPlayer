@@ -11,7 +11,7 @@ import { FaRandom } from "react-icons/fa";
 import { FaSync } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 
-const Controllers = () => {
+const Controllers = (props) => {
 
     //states
     const [isPlaying, setIsPlaying] = useState(false);
@@ -29,6 +29,7 @@ const Controllers = () => {
         const seconds = Math.floor(audioPlayer.current.duration);
         setDuration(seconds);
         progressBar.current.max = seconds;
+        console.log(props.music, "props")
     }, [audioPlayer.current.loadedmeta, audioPlayer.current.readyState]);
 
     const calculateTime = (secs) => {
@@ -88,8 +89,8 @@ const Controllers = () => {
     return (
         <div className='controllers'>
             <div className="songInfo">
-                <h4>Top Radio</h4>
-                <p>Listening...</p>
+                <h4>{props.music.musicName}</h4>
+                <p>{props.music.musicTitle}</p>
             </div>
 
             <div className="prog">
@@ -102,7 +103,7 @@ const Controllers = () => {
                 </div>
                 <div className="prog-bar">
                     <audio ref={audioPlayer}
-                        src={music}
+                        src={props.music.musicPath}
                         preload='metadata' >
                     </audio>
                 </div>

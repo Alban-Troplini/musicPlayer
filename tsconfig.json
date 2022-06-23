@@ -4,6 +4,8 @@
     "lib": [
       "dom",
       "dom.iterable",
+      "es5",
+      "es6",
       "esnext"
     ],
     "allowJs": true,
