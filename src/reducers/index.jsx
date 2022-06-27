@@ -1,13 +1,22 @@
+
 import { createStore } from "redux";
+import musicList from '../reducers/radioList';
+import levels from '../image/Avicii - Levels.mp3';
 
 const music = {
-  musicName: "Avicci",
-  musicTitle: "Levels",
-  musicImg: "https://upload.wikimedia.org/wikipedia/en/2/2c/Levelssong.jpg",
-  musicPath: "../image/Avicii - Levels.mp3"
+  radioImg:
+    "https://upload.wikimedia.org/wikipedia/en/2/2c/Levelssong.jpg",
+  radioURL: levels,
+  radioName: "Avicii",
 }
+const musicIndex = 0;
 
 const reducerFn = (state = { musicPlaying: music }, action) => {
+
+  if (action.type === "SELECTED")
+    return { musicPlaying: action.payload }
+
+
   return state;
 };
 

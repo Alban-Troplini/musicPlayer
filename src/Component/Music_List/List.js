@@ -28,11 +28,7 @@ const List = () => {
         className="sidepanel"
       >
         {radioStations.map((item, index) => (
-          <ListItem
-            radioImg={item.radioImg}
-            radioName={item.radioName}
-            key={index}
-          />
+          <ListItem radio={item} key={index} />
         ))}
       </div>
     </div>

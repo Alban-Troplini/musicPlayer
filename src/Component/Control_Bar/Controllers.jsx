@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import './Controller.css'
 
-import music from '../../image/Avicii - Levels.mp3'
-
 import { FaAngleLeft } from "react-icons/fa"
 import { FaAngleRight } from "react-icons/fa"
 import { FaPlay } from "react-icons/fa";
@@ -18,6 +16,7 @@ const Controllers = (props) => {
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
     const [loop, setLoop] = useState(false);
+    const [music, setMusic] = useState("");
 
 
     //refferences
@@ -29,7 +28,7 @@ const Controllers = (props) => {
         const seconds = Math.floor(audioPlayer.current.duration);
         setDuration(seconds);
         progressBar.current.max = seconds;
-        console.log(props.music, "props")
+        setMusic(props.music.musicPath);
     }, [audioPlayer.current.loadedmeta, audioPlayer.current.readyState]);
 
     const calculateTime = (secs) => {
@@ -89,8 +88,8 @@ const Controllers = (props) => {
     return (
         <div className='controllers'>
             <div className="songInfo">
-                <h4>{props.music.musicName}</h4>
-                <p>{props.music.musicTitle}</p>
+                <h4>{props.music.radioName}</h4>
+                <p>{props.music.radioName}</p>
             </div>
 
             <div className="prog">
@@ -103,7 +102,7 @@ const Controllers = (props) => {
                 </div>
                 <div className="prog-bar">
                     <audio ref={audioPlayer}
-                        src={props.music.musicPath}
+                        src={props.music.radioURL}
                         preload='metadata' >
                     </audio>
                 </div>
