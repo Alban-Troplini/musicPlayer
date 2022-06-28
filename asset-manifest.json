@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/musicPlayer.git/static/css/main.9980d154.css",
+    "main.js": "/musicPlayer.git/static/js/main.20d463a7.js",
+    "static/js/787.ded37e57.chunk.js": "/musicPlayer.git/static/js/787.ded37e57.chunk.js",
+    "static/media/Avicii - Levels.mp3": "/musicPlayer.git/static/media/Avicii - Levels.99fc6c3ffa2bd569b020.mp3",
+    "static/media/Coldplay - A Sky Full Of Stars (Official audio) (mp3cut.net).mp3": "/musicPlayer.git/static/media/Coldplay - A Sky Full Of Stars (Official audio) (mp3cut.net).6b8c0c035b844e6b4ea4.mp3",
+    "static/media/Martin Garrix - Poison (Official Video) (mp3cut.net).mp3": "/musicPlayer.git/static/media/Martin Garrix - Poison (Official Video) (mp3cut.net).282df495a18b39a97793.mp3",
+    "static/media/vinyl1.png": "/musicPlayer.git/static/media/vinyl1.b9564e4b6f9c41886575.png",
+    "index.html": "/musicPlayer.git/index.html",
+    "main.9980d154.css.map": "/musicPlayer.git/static/css/main.9980d154.css.map",
+    "main.20d463a7.js.map": "/musicPlayer.git/static/js/main.20d463a7.js.map",
+    "787.ded37e57.chunk.js.map": "/musicPlayer.git/static/js/787.ded37e57.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9980d154.css",
+    "static/js/main.20d463a7.js"
+  ]
+}
