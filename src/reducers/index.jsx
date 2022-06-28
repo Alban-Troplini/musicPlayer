@@ -8,6 +8,7 @@ const music = {
     "https://upload.wikimedia.org/wikipedia/en/2/2c/Levelssong.jpg",
   radioURL: levels,
   radioName: "Avicii",
+  type: "Levels"
 }
 const musicIndex = 0;
 

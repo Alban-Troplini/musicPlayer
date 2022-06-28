@@ -29,7 +29,9 @@ const Controllers = (props) => {
         setDuration(seconds);
         progressBar.current.max = seconds;
         setMusic(props.music.musicPath);
-    }, [audioPlayer.current.loadedmeta, audioPlayer.current.readyState]);
+        audioPlayer.current.play();
+        setIsPlaying(true);
+    }, [audioPlayer.current.loadedmeta, audioPlayer.current.readyState, setMusic]);
 
     const calculateTime = (secs) => {
         const minutes = Math.floor(secs / 60);
@@ -85,18 +87,37 @@ const Controllers = (props) => {
         changeRange();
     }
 
+    const type = props.music.type;
+
+    let renderEl;
+
+    if (type !== "Radio") {
+        renderEl = (
+            <div className="prog-time">
+                <p >{calculateTime(currentTime)}</p>
+                <p >{isNaN(duration) ? `00:00` : calculateTime(duration)}</p>
+            </div>
+        )
+    }
+    else {
+        renderEl = (
+            <div className="prog-time">
+                <p >{calculateTime(currentTime)}</p>
+                <p >onAir Radio</p>
+            </div>
+        )
+    }
+
+
     return (
         <div className='controllers'>
             <div className="songInfo">
                 <h4>{props.music.radioName}</h4>
-                <p>{props.music.radioName}</p>
+                <p>{props.music.type}</p>
             </div>
 
             <div className="prog">
-                <div className="prog-time">
-                    <p >{calculateTime(currentTime)}</p>
-                    <p >{isNaN(duration) ? `00:00` : calculateTime(duration)}</p>
-                </div>
+                {renderEl}
                 <div>
                     <input className='progressBar' ref={progressBar} defaultValue="0" onChange={changeRange} type="range"></input>
                 </div>
@@ -110,7 +131,7 @@ const Controllers = (props) => {
             <div className='buttons'>
                 <button onClick={audioLoop} style={{ backgroundColor: `${loop ? "orange" : "white"}` }}><FaRandom /></button>
                 <button onClick={backThirty}><small>30</small><FaAngleLeft /></button>
-                <button onClick={togglePlayPause}
+                <button onClick={togglePlayPause} className="bounceIn"
                     style={{ width: "3.5rem", height: "3.5rem", fontSize: "18px" }}>
                     {isPlaying ? <FaPlay /> : <FaPause />}
                 </button>

@@ -24,14 +24,13 @@ const ListItem = ({ ...item }) => {
                 <img src={item.radio.radioImg} alt="Song Image" className='image' />
                 <div className='description'>
                     <h4>{item.radio.radioName}</h4>
-                    <p>description </p>
+                    <p>{item.radio.type}</p>
 
                 </div>
                 <button
                     style={{ width: "2rem", height: "2rem", fontSize: "18px" }}
                     onClick={() => {
                         playSelected(item);
-                        console.log("itemsss", a)
                     }}>
                     <FaPlay />
                 </button>
